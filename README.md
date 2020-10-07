@@ -43,7 +43,7 @@ cd kafka-data-explorer-cdc
 
 ## Docker Compose services
 
-All the components in this demo run as Docker containers (except Azure Data Explorer of course) using Docker Compose. You can refer to the [docker-compose file in the repo](TODO): here is a quick overview:
+All the components in this demo run as Docker containers (except Azure Data Explorer of course) using Docker Compose. You can refer to the [docker-compose file in the repo](docker-compose.yaml): here is a quick overview:
 
 The [debezium](https://hub.docker.com/r/debezium/kafka/) images are used for Kafka and Zookeeper
 
@@ -84,7 +84,7 @@ The [debezium](https://hub.docker.com/r/debezium/kafka/) images are used for Kaf
       - postgres
 ```
 
-Kafka Connect workers: Both the connectors (source and sink) run within this container. The PostgreSQL connector is built into [debezium/connect](https://hub.docker.com/r/debezium/connect) image and the Azure Data Explorer connector is installed on top of that (you can check this `Dockerfile` TODO)
+Kafka Connect workers: Both the connectors (source and sink) run within this container. The PostgreSQL connector is built into [debezium/connect](https://hub.docker.com/r/debezium/connect) image and the Azure Data Explorer connector is installed on top of that (you can check this [Dockerfile](connector/Dockerfile))
 
 ```yaml
   connect:
