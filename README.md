@@ -410,6 +410,6 @@ az kusto database delete -n <database name> --cluster-name <cluster name> -g <re
 
 - [Data Ingestion overview](https://docs.microsoft.com/en-us/azure/data-explorer/ingest-data-overview)
 - Explore [what you can do with KQL](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/samples)
-- [Visualize data with Azure Data Explorer dashboards]https://docs.microsoft.com/en-us/azure/data-explorer/azure-data-explorer-dashboards
+- [Visualize data with Azure Data Explorer dashboards](https://docs.microsoft.com/en-us/azure/data-explorer/azure-data-explorer-dashboards)
 - [Data Explorer connector features](https://github.com/Azure/kafka-sink-azure-kusto/blob/master/README.md#3-features-supported)
 - [Debezium connectors](https://debezium.io/documentation/reference/1.2/connectors/index.html)
