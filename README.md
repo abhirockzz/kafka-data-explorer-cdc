@@ -1,4 +1,4 @@
-# CDC from PostgreSQL to ADX via Debezium
+# Change Data Capture from PostgreSQL to Azure Data Explorer using Kafka Connect
 
 This quickstart demonstrates how you can use Change Data Capture to stream database modifications from PostgreSQL to [Azure Data Explorer](https://docs.microsoft.com/en-us/azure/data-explorer/) via [Apache Kafka](https://kafka.apache.org/). It revolves around [Kafka Connect](https://kafka.apache.org/documentation/#connect) which is a platform to build scalable and reliable streaming data pipelines. All the components run in Docker containers - this includes Kafka, Zookeeper, Kafka Connect workers and the event generator application.
 
