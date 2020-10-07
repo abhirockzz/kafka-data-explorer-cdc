@@ -352,7 +352,7 @@ The connector should spin into action, authenticate to Azure Data Explorer and s
 
 > Note that `flush.size.bytes` and `flush.interval.ms` are used to regulate the batching process. Please refer to the [connector documentation](https://github.com/Azure/kafka-sink-azure-kusto/blob/master/README.md#5-sink-properties) for details on the individual properties.
 
-Since the flush configuration for the connector and the batching policy for the `Orders` table in Azure Data Explorer is pretty aggressive (for demonstration purposes), you should see data flowing into Data Explorer pretty soon.
+Since the flush configuration for the connector and the batching policy for the `Orders` table in Azure Data Explorer is pretty aggressive (for demonstration purposes), you should see data flowing into Data Explorer quickly.
 
 ## Query Data Explorer
 
