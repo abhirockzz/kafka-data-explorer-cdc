@@ -1,6 +1,6 @@
 # Change Data Capture from PostgreSQL to Azure Data Explorer using Kafka Connect
 
-This quickstart demonstrates how you can use Change Data Capture to stream database modifications from PostgreSQL to [Azure Data Explorer](https://docs.microsoft.com/en-us/azure/data-explorer/) via [Apache Kafka](https://kafka.apache.org/). It revolves around [Kafka Connect](https://kafka.apache.org/documentation/#connect) which is a platform to build scalable and reliable streaming data pipelines. All the components run in Docker containers - this includes Kafka, Zookeeper, Kafka Connect workers and the event generator application.
+This quickstart demonstrates how you can use Change Data Capture to stream database modifications from PostgreSQL to [Azure Data Explorer](https://docs.microsoft.com/azure/data-explorer/?WT.mc_id=data-0000-abhishgu) via [Apache Kafka](https://kafka.apache.org/). It revolves around [Kafka Connect](https://kafka.apache.org/documentation/#connect) which is a platform to build scalable and reliable streaming data pipelines. All the components run in Docker containers - this includes Kafka, Zookeeper, Kafka Connect workers and the event generator application.
 
 ## Overview
 
@@ -31,8 +31,8 @@ Here is a gist of the individual components:
 
 ## Pre-requisites
 
-- You will need a [Microsoft Azure account](https://docs.microsoft.com/azure/). Maybe try a [free one?](https://azure.microsoft.com/free/)
-- Install [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) if you don't have it already (should be quick!) or just use the [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/) from your browser.
+- You will need a [Microsoft Azure account](https://docs.microsoft.com/azure/?WT.mc_id=data-0000-abhishgu). Maybe try a [free one?](https://azure.microsoft.com/free/?WT.mc_id=data-0000-abhishgu)
+- Install [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&WT.mc_id=data-0000-abhishgu) if you don't have it already (should be quick!) or just use the [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/?WT.mc_id=data-0000-abhishgu) from your browser.
 - [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install) installed
 - Clone this repo
 
@@ -113,9 +113,9 @@ Before we dive into things, let's make sure you have setup and configured Azure 
 
 ## Setup and configure Azure Data Explorer
 
-1. Create an Azure Data Explorer cluster and a database - you can use this [handy quickstart from the documentation](https://docs.microsoft.com/en-us/azure/data-explorer/create-cluster-database-portal)
+1. Create an Azure Data Explorer cluster and a database - you can use this [handy quickstart from the documentation](https://docs.microsoft.com/azure/data-explorer/create-cluster-database-portal?WT.mc_id=data-0000-abhishgu)
 
-2. Create a table (`Orders`) and the mapping (`OrdersEventMapping`) using the [KQL](https://docs.microsoft.com/en-us/azure/data-explorer/kql-quick-reference) below:
+2. Create a table (`Orders`) and the mapping (`OrdersEventMapping`) using the [KQL](https://docs.microsoft.com/azure/data-explorer/kql-quick-reference?WT.mc_id=data-0000-abhishgu) below:
 
 ```kusto
 .create table Orders (orderid: string, custid: string, city: string, amount: int)
@@ -153,7 +153,7 @@ You will get a JSON response as such - please note down the `appId`, `password` 
 
 4. Add permissions to your database
 
-Provide appropriate role to the Service principal you just created. To assign the `admin` role, [follow this guide](https://docs.microsoft.com/en-us/azure/data-explorer/manage-database-permissions#manage-permissions-in-the-azure-portal) to use the Azure portal or use the following command in your Data Explorer cluster
+Provide appropriate role to the Service principal you just created. To assign the `admin` role, [follow this guide](https://docs.microsoft.com/azure/data-explorer/manage-database-permissions?WT.mc_id=data-0000-abhishgu#manage-permissions-in-the-azure-portal) to use the Azure portal or use the following command in your Data Explorer cluster
 
 ```kusto
 .add database <database name> admins  ('aadapp=<service principal AppID>;<service prinicpal TenantID>') 'AAD App'
@@ -399,7 +399,7 @@ To stop the containers, you can:
 docker-compose -p kusto-kafka-cdc down -v
 ```
 
-To delete the Azure Data Explorer cluster/database, use [az cluster delete](https://docs.microsoft.com/cli/azure/kusto/cluster?view=azure-cli-latest#az-kusto-cluster-delete) or [az kusto database delete](https://docs.microsoft.com/cli/azure/kusto/database?view=azure-cli-latest#az-kusto-database-delete)
+To delete the Azure Data Explorer cluster/database, use [az cluster delete](https://docs.microsoft.com/cli/azure/kusto/cluster?view=azure-cli-latest&WT.mc_id=data-0000-abhishgu#az-kusto-cluster-delete) or [az kusto database delete](https://docs.microsoft.com/cli/azure/kusto/database?view=azure-cli-latest&WT.mc_id=data-0000-abhishgu#az-kusto-database-delete)
 
 ```azurecli
 az kusto cluster delete -n <cluster name> -g <resource group name>
@@ -408,8 +408,8 @@ az kusto database delete -n <database name> --cluster-name <cluster name> -g <re
 
 ## Other resources
 
-- [Data Ingestion overview](https://docs.microsoft.com/en-us/azure/data-explorer/ingest-data-overview)
-- Explore [what you can do with KQL](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/samples)
-- [Visualize data with Azure Data Explorer dashboards](https://docs.microsoft.com/en-us/azure/data-explorer/azure-data-explorer-dashboards)
+- [Data Ingestion overview](https://docs.microsoft.com/azure/data-explorer/ingest-data-overview?WT.mc_id=data-0000-abhishgu)
+- Explore [what you can do with KQL](https://docs.microsoft.com/azure/data-explorer/kusto/query/samples?WT.mc_id=data-0000-abhishgu)
+- [Visualize data with Azure Data Explorer dashboards](https://docs.microsoft.com/azure/data-explorer/azure-data-explorer-dashboards?WT.mc_id=data-0000-abhishgu)
 - [Data Explorer connector features](https://github.com/Azure/kafka-sink-azure-kusto/blob/master/README.md#3-features-supported)
 - [Debezium connectors](https://debezium.io/documentation/reference/1.2/connectors/index.html)
